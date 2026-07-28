@@ -68,7 +68,6 @@ Session.vim
 secrets/
 private/
 credentials/
-wireguard/.config/wireguard/marinelab.conf
 *.secret
 *.token
 
@@ -115,3 +114,7 @@ Thumbs.db
 opencode/.config/opencode/tui.json.bak
 opencode/.config/opencode/opencode.json.bak
 opencode/.config/opencode/.oh-my-opencode-slim/
+
+wireguard/.config/wireguard/marinelab.conf
+wireguard/.config/wireguard/privatekey
+wireguard/.config/wireguard/publickey
