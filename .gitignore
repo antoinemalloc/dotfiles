@@ -68,6 +68,7 @@ Session.vim
 secrets/
 private/
 credentials/
+wireguard/.config/wireguard/marinelab.conf
 *.secret
 *.token
 
