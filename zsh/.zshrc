@@ -131,7 +131,7 @@ opencode() {
   if [[ $# -eq 0 || "$1" == -* ]]; then
     command opencode upgrade 2>/dev/null || true
     command opencode models --refresh 2>/dev/null || true
-    # bunx oh-my-opencode-slim@latest install --no-tui --tmux=no --skills=yes 2>/dev/null || true
+    bunx oh-my-opencode-slim@latest install --no-tui --tmux=no --skills=yes 2>/dev/null || true
   fi
   command opencode "$@"
 }
