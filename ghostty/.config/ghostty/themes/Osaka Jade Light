@@ -1,0 +1,38 @@
+# Osaka Jade Light
+# Based directly on OpenCode's osaka-jade light palette.
+#
+# OpenCode source:
+# https://github.com/anomalyco/opencode/blob/dev/packages/tui/src/theme/assets/osaka-jade.json
+
+background = #F6F5DD
+foreground = #111c18
+
+# Primary OpenCode light accent
+cursor-color = #1faa90
+cursor-text = #F6F5DD
+
+# Subtle jade selection
+selection-background = #D5D4B8
+selection-foreground = #111c18
+
+# ANSI palette
+#
+# 0-7: normal
+palette = 0=#111c18
+palette = 1=#c7392d
+palette = 2=#3d7a52
+palette = 3=#b5a020
+palette = 4=#3d7560
+palette = 5=#a8527a
+palette = 6=#1faa90
+palette = 7=#F6F5DD
+
+# 8-15: bright
+palette = 8=#53685B
+palette = 9=#d94b3f
+palette = 10=#4d9665
+palette = 11=#c2ad29
+palette = 12=#4d8d75
+palette = 13=#b9638b
+palette = 14=#28aa94
+palette = 15=#1a2520
