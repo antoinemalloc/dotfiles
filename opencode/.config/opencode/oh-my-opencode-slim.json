@@ -15,7 +15,7 @@
         ]
       },
       "oracle": {
-        "model": "opencode-go/qwen3.7-max",
+        "model": "opencode-go/qwen3.7-plus",
         "variant": "max",
         "skills": [
           "simplify"
@@ -51,7 +51,7 @@
         "mcps": []
       },
       "fixer": {
-        "model": "opencode-go/deepseek-v4-flash",
+        "model": "opencode-go/mimo-v2.5",
         "variant": "high",
         "skills": [],
         "mcps": []

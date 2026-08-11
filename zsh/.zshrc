@@ -83,6 +83,8 @@ source "$ZSH/oh-my-zsh.sh"
 
 # User configuration
 
+precmd() { print -Pn "\e]0;%m · %n · %~ · zsh\a" }
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -135,6 +137,10 @@ opencode() {
   fi
   command opencode "$@"
 }
+
+# >>> oh-my-opencode-slim background subagents >>>
+export OPENCODE_EXPERIMENTAL_BACKGROUND_SUBAGENTS=true
+export OPENCODE_ENABLE_EXA=1
 
 # Mise
 eval "$(mise activate zsh)"
