@@ -4,7 +4,7 @@
   "presets": {
     "opencode-go": {
       "orchestrator": {
-        "model": "opencode-go/deepseek-v4-pro",
+        "model": "opencode-go/minimax-m3",
         "variant": "medium",
         "skills": [
           "*"
@@ -15,7 +15,7 @@
         ]
       },
       "oracle": {
-        "model": "opencode-go/qwen3.7-plus",
+        "model": "opencode-go/gpt-5.6-luna",
         "variant": "max",
         "skills": [
           "simplify"
@@ -23,7 +23,7 @@
         "mcps": []
       },
       "council": {
-        "model": "opencode-go/deepseek-v4-pro",
+        "model": "opencode-go/minimax-m3",
         "variant": "high",
         "skills": [],
         "mcps": []
@@ -57,7 +57,7 @@
         "mcps": []
       },
       "observer": {
-        "model": "opencode-go/qwen3.6-plus",
+        "model": "opencode-go/qwen3.7-plus",
         "variant": "medium",
         "skills": [],
         "mcps": []
