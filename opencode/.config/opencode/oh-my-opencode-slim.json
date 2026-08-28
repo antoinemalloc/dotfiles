@@ -1,6 +1,6 @@
 {
   "$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
-  "preset": "opencode-go",
+  "preset": "albert",
   "presets": {
     "opencode-go": {
       "orchestrator": {
@@ -120,6 +120,50 @@
       "observer": {
         "model": "opencode/mimo-v2.5-free",
         "variant": "medium",
+        "skills": [],
+        "mcps": []
+      }
+    },
+    "albert": {
+      "orchestrator": {
+        "model": "ALBERT/deepseek-v4-flash",
+        "skills": [
+          "*"
+        ],
+        "mcps": [
+          "*",
+          "!context7"
+        ]
+      },
+      "oracle": {
+        "model": "ALBERT/openai/gpt-oss-120b",
+        "skills": [
+          "simplify"
+        ],
+        "mcps": []
+      },
+      "librarian": {
+        "model": "ALBERT/qwen3-coder-30b-A3b-instruct",
+        "skills": [],
+        "mcps": [
+          "context7",
+          "gh_grep"
+        ]
+      },
+      "explorer": {
+        "model": "ALBERT/qwen3-coder-30b-A3b-instruct",
+        "skills": [
+          "codemap"
+        ],
+        "mcps": []
+      },
+      "designer": {
+        "model": "ALBERT/deepseek-v4-flash",
+        "skills": [],
+        "mcps": []
+      },
+      "fixer": {
+        "model": "ALBERT/deepseek-v4-flash",
         "skills": [],
         "mcps": []
       }
