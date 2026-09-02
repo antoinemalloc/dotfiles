@@ -10,7 +10,7 @@ background-blur-radius = 25
 
 # Shell integration
 shell-integration = zsh
-shell-integration-features = ssh-env,ssh-terminfo
+shell-integration-features = ssh-env,ssh-terminfo,sudo
 
 # OS specific
 macos-titlebar-style = tabs
