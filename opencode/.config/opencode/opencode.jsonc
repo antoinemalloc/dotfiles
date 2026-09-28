@@ -1,53 +1,137 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "autoupdate": true,
-  "permission": {
-    "read": {
-      "~/.ssh/**": "deny",
-      "~/.gnupg/**": "deny",
-      "~/.aws/**": "deny",
-      "~/.azure/**": "deny",
-      "~/.kube/**": "deny",
-      "~/.docker/**": "deny",
-      "~/.config/gcloud/**": "deny",
-      ".env*": "deny",
-      "*.pem": "deny",
-      "*.key": "deny",
-      "*.p12": "deny",
-      "*.jks": "deny",
-      "*credentials*": "deny"
+  "update": "auto",
+  "permissions": [
+    {
+      "action": "read",
+      "resource": "~/.ssh/**",
+      "effect": "deny"
     },
-    "edit": {
-      "~/.aws/**": "deny",
-      "~/.azure/**": "deny",
-      "~/.ssh/**": "deny",
-      "~/.gnupg/**": "deny",
-      "~/.kube/**": "deny",
-      "~/.docker/**": "deny",
-      "~/.config/gcloud/**": "deny"
+    {
+      "action": "read",
+      "resource": "~/.gnupg/**",
+      "effect": "deny"
     },
-    "bash": {
-      "rm *credentials*": "deny",
-      "rm *.env*": "deny"
+    {
+      "action": "read",
+      "resource": "~/.aws/**",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "~/.azure/**",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "~/.kube/**",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "~/.docker/**",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "~/.config/gcloud/**",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": ".env*",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*.pem",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*.key",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*.p12",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*.jks",
+      "effect": "deny"
+    },
+    {
+      "action": "read",
+      "resource": "*credentials*",
+      "effect": "deny"
+    },
+    {
+      "action": "edit",
+      "resource": "~/.aws/**",
+      "effect": "deny"
+    },
+    {
+      "action": "edit",
+      "resource": "~/.azure/**",
+      "effect": "deny"
+    },
+    {
+      "action": "edit",
+      "resource": "~/.ssh/**",
+      "effect": "deny"
+    },
+    {
+      "action": "edit",
+      "resource": "~/.gnupg/**",
+      "effect": "deny"
+    },
+    {
+      "action": "edit",
+      "resource": "~/.kube/**",
+      "effect": "deny"
+    },
+    {
+      "action": "edit",
+      "resource": "~/.docker/**",
+      "effect": "deny"
+    },
+    {
+      "action": "edit",
+      "resource": "~/.config/gcloud/**",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "rm *credentials*",
+      "effect": "deny"
+    },
+    {
+      "action": "shell",
+      "resource": "rm *.env*",
+      "effect": "deny"
     }
-  },
-  "agent": {
+  ],
+  "agents": {
     "explore": {
-      "disable": true
+      "disabled": true
     },
     "general": {
-      "disable": true
+      "disabled": true
     },
     "build": {
-      "disable": false
+      "disabled": false
     },
     "plan": {
-      "disable": false
+      "disabled": false
     }
   },
-  "provider": {
+  "providers": {
     "ALBERT": {
-      "options": {
+      "name": "ALBERT API",
+      "package": "@opencode/ai/providers/openai-compatible",
+      "settings": {
         "baseURL": "https://albert.api.etalab.gouv.fr/v1"
       },
       "models": {
@@ -60,23 +144,31 @@
         "qwen3-coder-30b-A3b-instruct": {
           "name": "qwen3-coder-30b-A3b-instruct"
         }
+      }
+    },
+    "ollama": {
+      "name": "Ollama (local)",
+      "package": "@opencode/ai/providers/openai-compatible",
+      "settings": {
+        "baseURL": "http://localhost:11434/v1"
       },
-      "ollama": {
-        "npm": "@ai-sdk/openai-compatible",
-        "options": {
-          "baseURL": "http://localhost:11434/v1"
-        },
-        "models": {
-          "qwen3.5:9b": {
-            "name": "Qwen 3.5 9B"
-          }
+      "models": {
+        "qwen3.5:9b": {
+          "name": "Qwen 3.5 9B"
         }
       }
     }
   },
-  "model": "ollama/qwen3.5:9b",
-  "lsp": true,
-  "plugin": [
+  "plugins": [
     "oh-my-opencode-slim"
-  ]
+  ],
+  "agent": {
+    "explore": {
+      "disable": true
+    },
+    "general": {
+      "disable": true
+    }
+  },
+  "lsp": true
 }
