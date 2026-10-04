@@ -91,6 +91,8 @@ node_modules/
 
 tmp/
 temp/
+*.write-lock
+*.bak
 
 ###############################################################################
 # Local machine overrides
