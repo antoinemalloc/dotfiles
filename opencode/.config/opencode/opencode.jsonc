@@ -1,130 +1,83 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "update": "auto",
-  "permissions": [
-    {
-      "action": "read",
-      "resource": "~/.ssh/**",
-      "effect": "deny"
+  "autoupdate": "notify",
+  "permission": {
+    "webfetch": "ask",
+    "websearch": "ask",
+    "external_directory": {
+      "*": "ask",
+      "~/.ssh/*": "deny",
+      "~/.gnupg/*": "deny",
+      "~/.aws/*": "deny",
+      "~/.azure/*": "deny",
+      "~/.kube/*": "deny",
+      "~/.docker/*": "deny",
+      "~/.config/gcloud/*": "deny",
+      "~/.netrc": "deny",
+      "~/.npmrc": "deny"
     },
-    {
-      "action": "read",
-      "resource": "~/.gnupg/**",
-      "effect": "deny"
+    "read": {
+      "*": "allow",
+      ".env*": "deny",
+      "*.pem": "deny",
+      "*.key": "deny",
+      "*.p12": "deny",
+      "*.jks": "deny",
+      "*.keystore": "deny",
+      "*credentials*": "deny",
+      "*secret*": "deny",
+      "~/.ssh/*": "deny"
     },
-    {
-      "action": "read",
-      "resource": "~/.aws/**",
-      "effect": "deny"
+    "edit": {
+      "*": "allow",
+      ".env*": "deny",
+      "*.pem": "deny",
+      "*.key": "deny",
+      "*credentials*": "deny"
     },
-    {
-      "action": "read",
-      "resource": "~/.azure/**",
-      "effect": "deny"
-    },
-    {
-      "action": "read",
-      "resource": "~/.kube/**",
-      "effect": "deny"
-    },
-    {
-      "action": "read",
-      "resource": "~/.docker/**",
-      "effect": "deny"
-    },
-    {
-      "action": "read",
-      "resource": "~/.config/gcloud/**",
-      "effect": "deny"
-    },
-    {
-      "action": "read",
-      "resource": ".env*",
-      "effect": "deny"
-    },
-    {
-      "action": "read",
-      "resource": "*.pem",
-      "effect": "deny"
-    },
-    {
-      "action": "read",
-      "resource": "*.key",
-      "effect": "deny"
-    },
-    {
-      "action": "read",
-      "resource": "*.p12",
-      "effect": "deny"
-    },
-    {
-      "action": "read",
-      "resource": "*.jks",
-      "effect": "deny"
-    },
-    {
-      "action": "read",
-      "resource": "*credentials*",
-      "effect": "deny"
-    },
-    {
-      "action": "edit",
-      "resource": "~/.aws/**",
-      "effect": "deny"
-    },
-    {
-      "action": "edit",
-      "resource": "~/.azure/**",
-      "effect": "deny"
-    },
-    {
-      "action": "edit",
-      "resource": "~/.ssh/**",
-      "effect": "deny"
-    },
-    {
-      "action": "edit",
-      "resource": "~/.gnupg/**",
-      "effect": "deny"
-    },
-    {
-      "action": "edit",
-      "resource": "~/.kube/**",
-      "effect": "deny"
-    },
-    {
-      "action": "edit",
-      "resource": "~/.docker/**",
-      "effect": "deny"
-    },
-    {
-      "action": "edit",
-      "resource": "~/.config/gcloud/**",
-      "effect": "deny"
-    },
-    {
-      "action": "shell",
-      "resource": "rm *credentials*",
-      "effect": "deny"
-    },
-    {
-      "action": "shell",
-      "resource": "rm *.env*",
-      "effect": "deny"
-    }
-  ],
-  "agents": {
-    "explore": {
-      "disabled": true
-    },
-    "general": {
-      "disabled": true
-    },
-    "build": {
-      "disabled": false
-    },
-    "plan": {
-      "disabled": false
+    "bash": {
+      "*": "allow",
+      "git commit*": "deny",
+      "git push*": "deny",
+      "git add*": "deny",
+      "git rm*": "deny",
+      "git reset*": "deny",
+      "git checkout*": "deny",
+      "git switch*": "deny",
+      "git restore*": "deny",
+      "git rebase*": "deny",
+      "git merge*": "deny",
+      "git pull*": "deny",
+      "git cherry-pick*": "deny",
+      "git revert*": "deny",
+      "git clean*": "deny",
+      "git stash*": "deny",
+      "git config*": "deny",
+      "git apply*": "deny",
+      "git tag -d*": "deny",
+      "git branch -d*": "deny",
+      "git worktree add*": "deny",
+      "curl *": "ask",
+      "wget *": "ask",
+      "ssh *": "ask",
+      "scp *": "ask",
+      "npm install*": "ask",
+      "npm i *": "ask",
+      "pnpm add*": "ask",
+      "yarn add*": "ask",
+      "pip install*": "ask",
+      "pip uninstall*": "ask",
+      "brew install*": "ask",
+      "apt *": "ask",
+      "apt-get *": "ask",
+      "dnf *": "ask",
+      "yum *": "ask",
+      "git fetch*": "ask",
+      "docker pull*": "ask",
+      "kubectl *": "ask",
+      "terraform apply*": "ask",
+      "sudo *": "ask",
+      "rm -rf *": "ask"
     }
   },
   "providers": {
