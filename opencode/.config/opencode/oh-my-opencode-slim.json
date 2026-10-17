@@ -1,6 +1,7 @@
 {
   "$schema": "https://unpkg.com/oh-my-opencode-slim@latest/oh-my-opencode-slim.schema.json",
-  "preset": "opencode-free",
+  "preset": "opencode-free-v2",
+  "disabled_agents": [],
   "presets": {
     "opencode-go": {
       "orchestrator": {
@@ -119,6 +120,65 @@
       },
       "observer": {
         "model": "opencode/space-bunny-free",
+        "variant": "medium",
+        "skills": [],
+        "mcps": []
+      }
+    },
+    "opencode-free-v2": {
+      "orchestrator": {
+        "model": "opencode/deepseek-v4.1-flash-free",
+        "variant": "max",
+        "skills": [
+          "*"
+        ],
+        "mcps": [
+          "*",
+          "!context7"
+        ]
+      },
+      "oracle": {
+        "model": "opencode/nemotron-3-ultra-free",
+        "skills": [
+          "simplify"
+        ],
+        "mcps": []
+      },
+      "council": {
+        "model": "opencode/beam-free",
+        "variant": "high",
+        "skills": [],
+        "mcps": []
+      },
+      "librarian": {
+        "model": "opencode/glm-5.3-flash-free",
+        "variant": "medium",
+        "skills": [],
+        "mcps": [
+          "websearch",
+          "context7",
+          "gh_grep"
+        ]
+      },
+      "explorer": {
+        "model": "opencode/nemotron-3.5-lightning-free",
+        "skills": [],
+        "mcps": []
+      },
+      "designer": {
+        "model": "opencode/nemotron-3.5-super-vl-free",
+        "variant": "medium",
+        "skills": [],
+        "mcps": []
+      },
+      "fixer": {
+        "model": "opencode/space-bunny-free",
+        "variant": "high",
+        "skills": [],
+        "mcps": []
+      },
+      "observer": {
+        "model": "opencode/glm-5.3-flash-free",
         "variant": "medium",
         "skills": [],
         "mcps": []
