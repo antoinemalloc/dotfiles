@@ -121,19 +121,19 @@ tb() {
   container exec -it "$1" zsh
 }
 
-# Opencode
+# Opencode — curl-installs get ~/.opencode/bin in PATH; brew installs own the binary
+[[ -z "$HOMEBREW_PREFIX" ]] && export PATH="$HOME/.opencode/bin:$PATH"
+
+# Auto-upgrade only on curl installs: brew-managed opencode must be upgraded via brew
 opencode() {
   if [[ $# -eq 0 || "$1" == -* ]]; then
-    command opencode upgrade 2>/dev/null || true
-    command opencode models --refresh 2>/dev/null || true
+    if [[ -z "$HOMEBREW_PREFIX" ]]; then
+      command opencode upgrade 2>/dev/null || true
+    fi
     bunx oh-my-opencode-slim@latest install --no-tui --tmux=no --skills=yes 2>/dev/null || true
   fi
   command opencode "$@"
 }
-
-# >>> oh-my-opencode-slim background subagents >>>
-export OPENCODE_EXPERIMENTAL_BACKGROUND_SUBAGENTS=true
-export OPENCODE_ENABLE_EXA=1
 
 # Mise
 if command -v mise >/dev/null 2>&1; then

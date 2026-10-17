@@ -132,13 +132,5 @@
       "disabled": true
     }
   },
-  "agent": {
-    "explore": {
-      "disable": true
-    },
-    "general": {
-      "disable": true
-    }
-  },
   "lsp": true
 }

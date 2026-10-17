@@ -6,9 +6,12 @@ Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
 | Package | Contents |
 |---------|----------|
-| `git` | `.gitconfig` — user identity, GPG commit signing |
-| `zsh` | `.zshrc` — Oh My Zsh, Powerlevel10k, git plugin, bun, OpenCode wrapper |
+| `git` | `.gitconfig` — user identity, GPG key (commit signing disabled) |
+| `zsh` | `.zshrc`, `.zprofile`, `.p10k.zsh` — Oh My Zsh, Powerlevel10k, mise, OpenCode wrapper |
 | `opencode` | `~/.config/opencode/` — oh-my-opencode-slim, custom skills |
+| `ghostty` | `~/.config/ghostty/` — Ghostty config + Osaka Jade themes |
+| `wireguard` | `~/.config/wireguard/` — lab VPN config template (`lab.example.conf`) |
+| `Brewfile` | macOS packages (`brew bundle --file Brewfile`) |
 
 ## Bootstrap
 
@@ -37,7 +40,7 @@ This runs `install.sh`, which installs `stow` via Homebrew (macOS) or APT (Linux
 brew bundle --file Brewfile
 ```
 
-Installs: git, stow, curl, JetBrains Mono Nerd Font, VS Code, Bitwarden.
+Installs CLI tools (git, stow, opencode, container), VSCodium, browsers, Ghostty, Signal, VLC/IINA, VeraCrypt, and fonts (JetBrains Mono, Cascadia, Fira Code, Meslo).
 
 ### Zsh
 
