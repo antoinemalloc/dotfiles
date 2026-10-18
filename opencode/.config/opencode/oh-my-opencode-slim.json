@@ -152,7 +152,6 @@
       },
       "librarian": {
         "model": "opencode/glm-5.3-flash-free",
-        "variant": "medium",
         "skills": [],
         "mcps": [
           "websearch",
@@ -179,7 +178,6 @@
       },
       "observer": {
         "model": "opencode/glm-5.3-flash-free",
-        "variant": "medium",
         "skills": [],
         "mcps": []
       }
