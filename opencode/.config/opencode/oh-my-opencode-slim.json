@@ -50,7 +50,7 @@
         "mcps": []
       },
       "fixer": {
-        "model": "opencode/space-bunny-free",
+        "model": "opencode/minimax-m3.1-flash-free",
         "variant": "high",
         "skills": [],
         "mcps": []
