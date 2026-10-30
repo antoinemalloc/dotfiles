@@ -109,18 +109,6 @@ alias ll="ls -ahl"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Containers toolbox like
-# Example: tb myProject
-tb() {
-  (( $# == 1 )) || {
-    echo "Usage: tb <container>"
-    return 1
-  }
-
-  container start "$1" >/dev/null 2>&1
-  container exec -it "$1" zsh
-}
-
 # Opencode — curl-installs get ~/.opencode/bin in PATH; brew installs own the binary
 [[ -z "$HOMEBREW_PREFIX" ]] && export PATH="$HOME/.opencode/bin:$PATH"
 
@@ -130,7 +118,6 @@ opencode() {
     if [[ -z "$HOMEBREW_PREFIX" ]]; then
       command opencode upgrade 2>/dev/null || true
     fi
-    bunx oh-my-opencode-slim@latest install --no-tui --tmux=no --skills=yes 2>/dev/null || true
   fi
   command opencode "$@"
 }

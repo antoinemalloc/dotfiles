@@ -9,7 +9,3 @@ do
         break
     fi
 done
-
-# Opencode (oh-my-opencode-slim)
-export OPENCODE_EXPERIMENTAL_BACKGROUND_SUBAGENTS=true
-export OPENCODE_ENABLE_EXA=1

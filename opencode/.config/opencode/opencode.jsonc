@@ -2,7 +2,6 @@
   "$schema": "https://opencode.ai/config.json",
   "update": "notify",
 
-
 "permissions": [
   { "action": "read", "resource": "*.env*", "effect": "deny" },
   { "action": "read", "resource": "*.pem", "effect": "deny" },
@@ -82,15 +81,6 @@
       }
     }
   },
-  "agents": {
-    "explore": {
-      "disabled": true
-    },
-    "general": {
-      "disabled": true
-    }
-  },
-  "lsp": true,
   "mcp": {
     "servers": {
       "context7": {
@@ -98,5 +88,7 @@
         "url": "https://mcp.context7.com/mcp"
       }
     }
-  }
+  },
+  "plugin": [
+  ]
 }

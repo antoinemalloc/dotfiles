@@ -4,7 +4,6 @@
     "name": "osaka-jade"
   },
   "plugins": [
-    "oh-my-opencode-slim"
   ],
   "diffs": {
     "wrap": "word"
